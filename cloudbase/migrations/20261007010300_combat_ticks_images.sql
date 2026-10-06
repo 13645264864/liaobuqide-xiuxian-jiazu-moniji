@@ -1,0 +1,13 @@
+ALTER TABLE public.fc_combat_encounters ADD COLUMN tick_at timestamptz NOT NULL DEFAULT now(), ADD COLUMN battle_log jsonb NOT NULL DEFAULT '[]';
+UPDATE public.fc_monster_definitions SET image_path='monsters/qi_stone_rat.png' WHERE id='qi_stone_rat';
+UPDATE public.fc_monster_definitions SET image_path='monsters/qi_venom_snake.png' WHERE id='qi_venom_snake';
+UPDATE public.fc_monster_definitions SET image_path='monsters/qi_talisman_crow.png' WHERE id='qi_talisman_crow';
+UPDATE public.fc_monster_definitions SET image_path='monsters/foundation_turtle.png' WHERE id='foundation_turtle';
+UPDATE public.fc_monster_definitions SET image_path='monsters/foundation_lion.png' WHERE id='foundation_lion';
+UPDATE public.fc_monster_definitions SET image_path='monsters/foundation_butterfly.png' WHERE id='foundation_butterfly';
+UPDATE public.fc_monster_definitions SET image_path='monsters/core_fire_qilin.png' WHERE id='core_fire_qilin';
+UPDATE public.fc_monster_definitions SET image_path='monsters/core_ice_luan.png' WHERE id='core_ice_luan';
+UPDATE public.fc_monster_definitions SET image_path='monsters/core_blood_serpent.png' WHERE id='core_blood_serpent';
+CREATE OR REPLACE FUNCTION public.fc_resolve_combat(p_action text DEFAULT 'auto') RETURNS jsonb LANGUAGE plpgsql VOLATILE SECURITY DEFINER SET search_path=public,pg_temp AS $$
+DECLARE c public.fc_characters; e public.fc_combat_encounters; m public.fc_monster_definitions; a numeric; damage numeric; md numeric; win boolean;
+BEGIN SELECT * INTO c FROM public.fc_characters WHERE owner_id=public.fc_require_uid() FOR UPDATE; SELECT * INTO e FROM public.fc_combat_encounters WHERE character_id=c.id AND status='active' LIMIT 1; IF e.id IS NULL THEN RETURN public.fc_get_combat(); END IF; IF now()-e.tick_at<interval '1 second' THEN RETURN public.fc_get_combat(); END IF; SELECT * INTO m FROM public.fc_monster_definitions WHERE id=e.monster_id; a:=(public.fc_get_attributes()->>'attack')::numeric; damage:=greatest(1,a-m.base_defense*.35); md:=greatest(1,m.base_attack*e.monster_count-(public.fc_get_attributes()->>'defense')::numeric*.25); UPDATE public.fc_combat_encounters SET tick_at=now(),battle_log=battle_log||jsonb_build_array('第'||(turn+1)||'回合：你造成'||round(damage)||'伤害，妖兽造成'||round(md)||'伤害。'),turn=turn+1,player_health=player_health-md,monster_health=monster_health-damage WHERE id=e.id RETURNING * INTO e; IF e.monster_health<=0 THEN UPDATE public.fc_characters SET spirit_stones=spirit_stones+5*(m.realm_index+1)*e.monster_count WHERE id=c.id; UPDATE public.fc_combat_encounters SET status='won',result='胜利' WHERE id=e.id; ELSIF e.player_health<=0 THEN UPDATE public.fc_combat_encounters SET status='lost',result='战败' WHERE id=e.id; END IF; RETURN public.fc_get_combat(); END $$;

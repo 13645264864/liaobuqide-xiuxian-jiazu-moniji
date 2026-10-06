@@ -1,0 +1,6 @@
+{
+  "name":"fc-register-http",
+  "version":"0.1.0",
+  "private":true,
+  "dependencies":{"@cloudbase/manager-node":"5.9.0"}
+}
