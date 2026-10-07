@@ -49,3 +49,11 @@ CloudBase 环境：`chumowujin-beta-d0faxqcq5b2c32fa`，区域 `ap-shanghai`。�
 远程仓库：<https://github.com/13645264864/liaobuqide-xiuxian-jiazu-moniji>
 
 推送前确认 `.gitignore` 没有遗漏密钥、临时文件、构建产物和签名文件。
+
+## 当前版本记录（2026-10-07）
+
+- Git 当前基线：`4da1ff1`（自动跨房间出口版本）。
+- 本次已将网页和数据库地图状态恢复到怪物名称修复前的稳定地图状态；未把后续 `20261007012200` 之后的错误地图覆盖迁移纳入仓库。
+- 当前公网验证地址：<https://family-cultivation-chumowujin-beta-d0faxqcq5b2c32fa.webapps.tcloudbase.com/?v=rollback-map-20261007>。
+- 当前已验证：项目构建成功、静态托管上传成功、地图 RPC 包含 `cells`、`exits`、`navigation`、`map_rooms`、`atlas` 字段。
+- 继续开发前，先检查 `git log`、`git status` 和线上 `fc_get_world_state()`；不要再次整段覆盖地图 RPC。怪物中文名修复应单独处理，不得影响地图返回结构。
