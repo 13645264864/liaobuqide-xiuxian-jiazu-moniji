@@ -1,6 +1,7 @@
 import {gatherForTenSeconds} from './lib/gather';
 const STATE_COLORS=['#b34832','#d07a21','#b39625','#7a992a','#368d47','#208c73','#278c98','#347eb6','#4365a0','#665994','#915787','#b95776','#864530','#9b672e','#777f29','#457446','#337267','#3a6e80','#4d6a87','#716d93','#9a6575','#c38368','#83956b','#689593'];
-import {useEffect,useRef,useState} from 'react';
+import {useEffect,useMemo,useRef,useState} from 'react';
+import {roomDistances} from './lib/navigation';
 import {X,Map as MapIcon,Square,Users} from 'lucide-react';
 import {getWorldState,moveWorld,errorText,publicProfile,socialAction,rpc} from './lib/backend';
 import type {WorldState} from './lib/types';
@@ -35,8 +36,9 @@ export function WorldExplorer({setError}:{setError:(v:string)=>void}){
  const farmHandler=useRef<(realm:number)=>void>(()=>{});farmHandler.current=(realm)=>{const w=state.current;if(!w||locked.current)return;const candidates=(w.map_rooms||[]).filter(r=>r.kind==='forest').map(r=>{const cells=w.navigation?.cells.filter(c=>c.room_id===r.id)||[];const target=cells.find(c=>c.x===0&&c.y===0)||cells[0];const path=target?findRoute(w,target.id):null;const tier=r.name.includes('核心')?4:r.name.includes('内围')?2:0;return {r,target,path,tier}}).filter(v=>v.target&&v.path!==null&&realm>=v.tier).sort((a,b)=>a.path!.length-b.path!.length);const nearest=candidates[0];if(!nearest){setError('附近没有当前境界可进入的野外路线。');return}if(!nearest.path!.length){setLog('已在附近野外，每5秒自动判定遇怪。');return}void travel(nearest.target!.id,nearest.r.name)};
  useEffect(()=>{const start=(e:Event)=>farmHandler.current((e as CustomEvent<{realm:number}>).detail.realm);window.addEventListener('auto-farm',start);return()=>window.removeEventListener('auto-farm',start)},[]);
  const inspect=async(p:{id:string;name:string})=>{setPerson(p);setProfile(null);try{setProfile(await publicProfile(p.id) as Record<string,unknown>)}catch(e){setError(errorText(e))}};
+ const distances=useMemo(()=>roomDistances(world?.navigation,world?.cell.id||''),[world?.navigation,world?.cell.id]);
  if(!world)return <div className="empty">正在读取城池道路……</div>;
- const rooms=world.map_rooms||[];const routeDistance=(roomId:string)=>{const cells=world.navigation?.cells||[];const target=cells.find(c=>c.room_id===roomId);if(!target)return 999999;const q=[world.cell.id];const dist=new Map([[world.cell.id,0]]);for(const id of q){for(const edge of world.navigation?.edges||[]){if(edge.from!==id||dist.has(edge.to))continue;dist.set(edge.to,(dist.get(id)||0)+1);q.push(edge.to)}}return dist.get(target.id)||999999};const exits=world.exits||[];const position=['西北','北侧','东北','西侧','中央','东侧','西南','南侧','东南'][(world.cell.y+1)*3+world.cell.x+1];
+ const rooms=world.map_rooms||[];const routeDistance=(roomId:string)=>distances.get(roomId)??999999;const exits=world.exits||[];const position=['西北','北侧','东北','西侧','中央','东侧','西南','南侧','东南'][(world.cell.y+1)*3+world.cell.x+1];
  return <><div className="explorer">
  {(walking||world.journey)&&<div className="active-route-float" role="status"><span>{world.journey?'正在沿官道前往'+(world.atlas?.cities.find(c=>Number(c.id)===Number(world.journey?.destination))?.name||'相邻城池'):walking?'正在自动寻路中':''}</span><button onClick={()=>void cancel()}>取消寻路</button></div>}
  {world.journey&&<RoadJourney world={world} onCancel={()=>void cancel()} onArrive={async()=>{try{const next=await getWorldState();state.current=next;setWorld(next)}catch(e){setError(errorText(e))}}}/>}
