@@ -40,8 +40,8 @@ export async function getState(): Promise<GameState> {
   const result: unknown = await rpc('fc_get_state');
   return validateState(result);
 }
-export async function getWorldState():Promise<import('./types').WorldState>{const result=await rpc<import('./types').WorldState>('fc_get_world_state');window.dispatchEvent(new CustomEvent('cultivation-safety',{detail:result.cultivation_safety}));return result}
-export async function moveWorld(direction:'north'|'south'|'east'|'west'):Promise<import('./types').WorldState>{const result=await rpc<import('./types').WorldState>('fc_move_world',{p_direction:direction});window.dispatchEvent(new CustomEvent('cultivation-safety',{detail:result.cultivation_safety}));return result}
+export async function getWorldState():Promise<import('./types').WorldState>{const result=await rpc<import('./types').WorldState>('fc_get_world_state');window.dispatchEvent(new CustomEvent('world-position',{detail:result}));window.dispatchEvent(new CustomEvent('cultivation-safety',{detail:result.cultivation_safety}));return result}
+export async function moveWorld(direction:'north'|'south'|'east'|'west'):Promise<import('./types').WorldState>{const result=await rpc<import('./types').WorldState>('fc_move_world',{p_direction:direction});window.dispatchEvent(new CustomEvent('world-position',{detail:result}));window.dispatchEvent(new CustomEvent('cultivation-safety',{detail:result.cultivation_safety}));return result}
 
 export async function listChat(channel:'world'|'family'):Promise<import('./types').ChatMessage[]> { return rpc('fc_list_chat',{p_channel:channel}); }
 export async function sendChat(channel:'world'|'family',content:string):Promise<void> { await rpc('fc_send_chat',{p_channel:channel,p_content:content}); }
