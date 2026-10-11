@@ -1,0 +1,15 @@
+import {useState} from 'react';import {rpc,errorText} from './lib/backend';import type {Combat} from './CombatController';
+export function CombatBar({label,value,max,kind='health'}:{label:string;value:number;max:number;kind?:string}){return <div className={`combat-meter ${kind}`}><div><span>{label}</span><b>{Math.max(0,Math.ceil(value))} / {Math.ceil(max)}</b></div><progress value={Math.max(0,value)} max={Math.max(1,max)}/></div>}
+export function CombatDetails({combat,onUpdate,setError}:{combat:Combat;onUpdate:(c:Combat)=>void;setError:(s:string)=>void}){
+ const [busy,setBusy]=useState<string|null>(null),[expanded,setExpanded]=useState(false);const e=combat.encounter!,runtime=e.skill_runtime||{};
+ const use=async(key:string)=>{if(busy)return;setBusy(key);try{await rpc('fc_consume_item',{p_key:key});onUpdate(await rpc<Combat>('fc_get_combat'));window.dispatchEvent(new Event('character-refresh'))}catch(err){setError(errorText(err))}finally{setBusy(null)}};
+ const items=[['fire_talisman','烈火符'],['thunder_talisman','雷击符'],['health_pill','疗伤丹'],['mana_pill','回灵丹']];
+ const cooldown=e.item_at?Math.max(0,8-Math.floor((Date.now()-new Date(e.item_at).getTime())/1000)):0;
+ const shield=Number(runtime.shield||0),turn=e.turn;
+ return <div className="combat-detail-area">{shield>0&&Number(runtime.shield_until||0)>=turn&&<div className="combat-state-chip">护盾 {Math.ceil(shield)}</div>}{Number(runtime.enemy_stun_until??-1)>=turn&&<div className="combat-state-chip">妖兽眩晕中</div>}
+ {e.last_damage!==undefined&&turn>0&&<div className="combat-hit-summary" key={turn}><strong>{e.last_critical?'暴击！':'命中'} {e.last_damage}</strong><span>受到伤害 {e.last_incoming||0}</span></div>}
+ <div className="combat-skill-strip">{combat.skills?.map(s=>{const last=runtime.used?.[s.id];const left=last===undefined?0:Math.max(0,s.effects.cooldown-(turn-last));return <div key={s.id}><strong>{s.name}{s.enhanced?'·强化':''}</strong><small>{s.effects.cooldown>=9999&&last!==undefined?'本场已使用':left>0?`冷却 ${left}秒`:s.effects.threshold?`生命低于${Math.round(s.effects.threshold*100)}%触发`:s.effects.lethal?'致命受击触发':'就绪'} · 耗灵{Math.round(s.effects.cost*100)}%</small></div>})}</div>
+ {combat.active&&<><h4>战斗物品</h4><div className="combat-quick-items">{items.map(([base,name])=>{const key=base+'_'+combat.player_realm_index,item=combat.items?.find(i=>i.key===key);const count=Number(item?.quantity||0),isTalisman=base.includes('talisman');return <button key={base} disabled={Boolean(busy)||count<1||isTalisman&&cooldown>0} onClick={()=>void use(key)}><strong>{name}</strong><small>×{count} {isTalisman&&cooldown>0?`· ${cooldown}秒`:''}</small></button>})}</div><p className="combat-item-tip">符纸是材料；画成烈火符、雷击符后才可在这里使用。仅显示当前境界物品，默认手动消耗。</p></>}
+ {!combat.active&&<div className="combat-result-summary"><strong>{e.result} · {e.turn}回合</strong><p>{e.battle_log.filter(v=>v.includes('获得')||v.includes('收获')||v.includes('战败')).slice(-5).join('；')}</p></div>}
+ <button className="combat-log-toggle" onClick={()=>setExpanded(v=>!v)}>{expanded?'收起战斗记录':'展开战斗记录'}</button><div className="combat-log">{(expanded?e.battle_log:e.battle_log.slice(-3)).map((line,i)=><p key={i}>{line}</p>)}</div></div>;
+}

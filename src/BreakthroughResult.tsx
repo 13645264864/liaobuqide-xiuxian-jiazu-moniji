@@ -1,0 +1,6 @@
+import type {Demon,Skill} from './Skills';
+export interface Trial{success:boolean;major:boolean;grade:number;chance:number;log:string[];demon?:Demon;choice_id?:string;candidates?:Skill[];expansion_ratio?:number;grade_factor?:number;changes?:{base?:Record<string,number>;expansion?:Record<string,number>}}
+export function BreakthroughResult({trial,onClose}:{trial:Trial;onClose:()=>void}){
+ const names=[['health','生命'],['mana','灵力'],['attack','攻击'],['defense','防御'],['speed','速度'],['consciousness_max','神识上限']];
+ return <div className="character-info-overlay"><section role="dialog" aria-modal="true" aria-label="突破结果"><h3>{trial.success?'突破成功':'突破失败'}</h3>{trial.major&&<p>{trial.grade}品试炼 · 心魔试炼{trial.success?'战胜':'失败'}</p>}{trial.success&&<p>扩脉 {((trial.expansion_ratio||0)*100).toFixed(2)}% × 品级系数 {trial.grade_factor||1}；额外增加＝基础增长×扩脉比例×品级系数。</p>}{trial.success&&names.map(([key,label])=>{const base=Number(trial.changes?.base?.[key]||0),extra=Number(trial.changes?.expansion?.[key]||0);return <p key={key}><strong>{label}</strong><br/>基础 +{base.toFixed(2)} ＋ 扩脉额外 +{extra.toFixed(2)} ＝ 合计 +{(base+extra).toFixed(2)}</p>})}{trial.log.map((line,i)=><p key={i}>{line}</p>)}<button className="primary" onClick={onClose}>知道了</button></section></div>;
+}

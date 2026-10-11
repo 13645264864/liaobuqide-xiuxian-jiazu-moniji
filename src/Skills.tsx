@@ -1,0 +1,19 @@
+import {Swords} from 'lucide-react';
+import {useEffect,useState} from 'react';
+import {rpc,errorText,signedAvatar} from './lib/backend';
+export interface Skill{id:string;name:string;category:'art'|'ability';description:string;enhanced:boolean;slot:number|null;usable?:boolean;source?:string;realm_required?:number;effects:{cooldown:number;cost:number;targets:number}}
+export interface Choice{id:string;grade:number;realm:number;candidates:Skill[]}
+export interface SkillsState{skills:Skill[];pending:Choice[]}
+export function SkillChoice({choice,onComplete,onClose,setError}:{choice:Choice;onComplete:()=>void;onClose:()=>void;setError:(s:string)=>void}){
+ const [selected,setSelected]=useState<string|null>(null),[busy,setBusy]=useState(false);
+ const confirm=async()=>{if(!selected||busy)return;setBusy(true);try{await rpc('fc_choose_skill',{p_choice:choice.id,p_skill:selected});setError('领悟成功，已存入神仙妙法。');onComplete()}catch(e){setError(errorText(e))}finally{setBusy(false)}};
+ return <div className="character-info-overlay"><section role="dialog" aria-label="突破领悟三选一"><div className="section-title"><h3>{choice.grade}品突破 · 选择领悟</h3><button onClick={onClose} disabled={busy}>稍后选择</button></div><p className="muted">三张选择一张；确认后存入神仙妙法。刷新不重抽。</p><div className="skill-choice-cards">{choice.candidates.map(s=><button key={s.id} aria-pressed={selected===s.id} className={selected===s.id?'skill-card selected':'skill-card'} onClick={()=>setSelected(s.id)}><small>{s.category==='art'?'战技':'神通'} · {s.enhanced?'九品强化版':'标准版'}</small><strong>{s.name}</strong><p>{s.description}</p><small>冷却 {s.effects.cooldown>=9999?'每场一次':`${s.effects.cooldown}秒`} · 耗灵 {Math.round(s.effects.cost*100)}% · 最多 {s.effects.targets} 个目标</small></button>)}</div><button className="primary wide" disabled={!selected||busy} onClick={()=>void confirm()}>{busy?'正在领悟…':'确认领悟'}</button></section></div>;
+}
+export interface Demon{success:boolean;avatar_key:string|null;player_name:string;grade:number;player_health_max:number;monster:{base_health:number;base_attack:number;base_defense:number;expansion_percent:number};turns:Array<{turn:number;player_health:number;monster_health:number;damage:number;incoming:number;logs:string[]}>}
+export function DemonTrial({demon,onComplete,setError}:{demon:Demon;onComplete:()=>void;setError:(s:string)=>void}){
+ const [frame,setFrame]=useState(-1),[avatar,setAvatar]=useState('');
+ useEffect(()=>{let live=true;if(demon.avatar_key)signedAvatar(demon.avatar_key).then(v=>{if(live)setAvatar(v)}).catch(e=>setError(errorText(e)));return()=>{live=false}},[demon.avatar_key,setError]);
+ useEffect(()=>{if(frame>=demon.turns.length-1){const t=setTimeout(onComplete,900);return()=>clearTimeout(t)}const t=setTimeout(()=>setFrame(v=>v+1),Math.max(250,Math.min(1000,29000/Math.max(1,demon.turns.length))));return()=>clearTimeout(t)},[frame,demon.turns.length,onComplete]);
+ const tick=demon.turns[frame];
+ return <div className="character-info-overlay"><section role="dialog" aria-label="心魔突破试炼"><h3>{demon.grade}级心魔 · 自动试炼</h3><p>心魔参考扩脉 {demon.monster.expansion_percent}% · 攻击 {demon.monster.base_attack} · 防御 {demon.monster.base_defense}</p><div className="demon-arena"><div><div className="demon-avatar">{avatar?<img src={avatar} alt="修士头像"/>:demon.player_name.slice(0,1)}</div><strong>{demon.player_name}</strong><p>生命 {Math.ceil(tick?.player_health??demon.player_health_max)} / {demon.player_health_max}</p></div><Swords size={22}/><div><div className="demon-avatar inner-demon">{avatar?<img src={avatar} alt="心魔头像"/>:demon.player_name.slice(0,1)}</div><strong>心魔</strong><p>生命 {Math.ceil(tick?.monster_health??demon.monster.base_health)} / {demon.monster.base_health}</p></div></div>{tick&&<p>第{tick.turn}回合：你造成{tick.damage}伤害，心魔造成{tick.incoming}伤害。</p>}{tick?.logs.map((v,i)=><p key={i}>{v}</p>)}</section></div>;
+}

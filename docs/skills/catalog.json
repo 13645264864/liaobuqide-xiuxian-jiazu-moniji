@@ -1,0 +1,1213 @@
+[
+  {
+    "id": "art_01",
+    "name": "五岳剑阵",
+    "category": "art",
+    "effects": {
+      "damage": 3,
+      "targets": 5,
+      "cooldown": 10,
+      "cost": 0.12,
+      "sword": true,
+      "shield": 0.15
+    },
+    "enhanced": {
+      "damage": 3,
+      "targets": 5,
+      "cooldown": 10,
+      "cost": 0.12,
+      "sword": true,
+      "shield": 0.15
+    },
+    "description": "伤害倍率300%；生命护盾15.0%；需要佩剑",
+    "enhanced_description": "伤害倍率300%；生命护盾15.0%；需要佩剑"
+  },
+  {
+    "id": "art_02",
+    "name": "流星连剑",
+    "category": "art",
+    "effects": {
+      "damage": 5,
+      "targets": 1,
+      "cooldown": 8,
+      "cost": 0.1,
+      "sword": true
+    },
+    "enhanced": {
+      "damage": 5,
+      "targets": 1,
+      "cooldown": 8,
+      "cost": 0.1,
+      "sword": true
+    },
+    "description": "伤害倍率500%；需要佩剑",
+    "enhanced_description": "伤害倍率500%；需要佩剑"
+  },
+  {
+    "id": "art_03",
+    "name": "横扫八方",
+    "category": "art",
+    "effects": {
+      "damage": 2.8,
+      "targets": 5,
+      "cooldown": 10,
+      "cost": 0.12,
+      "sword": false,
+      "weaken": 0.15,
+      "duration": 4
+    },
+    "enhanced": {
+      "damage": 2.8,
+      "targets": 5,
+      "cooldown": 10,
+      "cost": 0.12,
+      "sword": false,
+      "weaken": 0.15,
+      "duration": 4
+    },
+    "description": "伤害倍率280.0%；敌方伤害降低15.0%；持续4秒",
+    "enhanced_description": "伤害倍率280.0%；敌方伤害降低15.0%；持续4秒"
+  },
+  {
+    "id": "art_04",
+    "name": "雷链术",
+    "category": "art",
+    "effects": {
+      "damage": 2.6,
+      "targets": 5,
+      "cooldown": 12,
+      "cost": 0.12,
+      "sword": false,
+      "stun": 1
+    },
+    "enhanced": {
+      "damage": 2.6,
+      "targets": 5,
+      "cooldown": 12,
+      "cost": 0.12,
+      "sword": false,
+      "stun": 1
+    },
+    "description": "伤害倍率260.0%；眩晕1秒",
+    "enhanced_description": "伤害倍率260.0%；眩晕1秒"
+  },
+  {
+    "id": "art_05",
+    "name": "赤焰环",
+    "category": "art",
+    "effects": {
+      "damage": 1.8,
+      "targets": 5,
+      "cooldown": 12,
+      "cost": 0.12,
+      "sword": false,
+      "burn": 0.4,
+      "duration": 4
+    },
+    "enhanced": {
+      "damage": 1.8,
+      "targets": 5,
+      "cooldown": 12,
+      "cost": 0.12,
+      "sword": false,
+      "burn": 0.4,
+      "duration": 4
+    },
+    "description": "伤害倍率180.0%；每秒持续伤害40.0%；持续4秒",
+    "enhanced_description": "伤害倍率180.0%；每秒持续伤害40.0%；持续4秒"
+  },
+  {
+    "id": "art_06",
+    "name": "冰封剑雨",
+    "category": "art",
+    "effects": {
+      "damage": 2.5,
+      "targets": 5,
+      "cooldown": 12,
+      "cost": 0.12,
+      "sword": true,
+      "weaken": 0.2,
+      "duration": 4
+    },
+    "enhanced": {
+      "damage": 2.5,
+      "targets": 5,
+      "cooldown": 12,
+      "cost": 0.12,
+      "sword": true,
+      "weaken": 0.2,
+      "duration": 4
+    },
+    "description": "伤害倍率250.0%；敌方伤害降低20.0%；持续4秒；需要佩剑",
+    "enhanced_description": "伤害倍率250.0%；敌方伤害降低20.0%；持续4秒；需要佩剑"
+  },
+  {
+    "id": "art_07",
+    "name": "破甲斩",
+    "category": "art",
+    "effects": {
+      "damage": 4.5,
+      "targets": 1,
+      "cooldown": 10,
+      "cost": 0.1,
+      "sword": true,
+      "pierce": 0.3
+    },
+    "enhanced": {
+      "damage": 4.5,
+      "targets": 1,
+      "cooldown": 10,
+      "cost": 0.1,
+      "sword": true,
+      "pierce": 0.3
+    },
+    "description": "伤害倍率450.0%；忽略防御30.0%；需要佩剑",
+    "enhanced_description": "伤害倍率450.0%；忽略防御30.0%；需要佩剑"
+  },
+  {
+    "id": "art_08",
+    "name": "断岳重击",
+    "category": "art",
+    "effects": {
+      "damage": 6,
+      "targets": 1,
+      "cooldown": 12,
+      "cost": 0.12,
+      "sword": false
+    },
+    "enhanced": {
+      "damage": 6,
+      "targets": 1,
+      "cooldown": 12,
+      "cost": 0.12,
+      "sword": false
+    },
+    "description": "伤害倍率600%",
+    "enhanced_description": "伤害倍率600%"
+  },
+  {
+    "id": "art_09",
+    "name": "追魂剑",
+    "category": "art",
+    "effects": {
+      "damage": 4,
+      "targets": 1,
+      "cooldown": 10,
+      "cost": 0.1,
+      "sword": true,
+      "execute": 1.625
+    },
+    "enhanced": {
+      "damage": 4,
+      "targets": 1,
+      "cooldown": 10,
+      "cost": 0.1,
+      "sword": true,
+      "execute": 1.625
+    },
+    "description": "伤害倍率400%；需要佩剑",
+    "enhanced_description": "伤害倍率400%；需要佩剑"
+  },
+  {
+    "id": "art_10",
+    "name": "烈火掌",
+    "category": "art",
+    "effects": {
+      "damage": 3.5,
+      "targets": 1,
+      "cooldown": 10,
+      "cost": 0.1,
+      "sword": false,
+      "burn": 0.5,
+      "duration": 4
+    },
+    "enhanced": {
+      "damage": 3.5,
+      "targets": 1,
+      "cooldown": 10,
+      "cost": 0.1,
+      "sword": false,
+      "burn": 0.5,
+      "duration": 4
+    },
+    "description": "伤害倍率350.0%；每秒持续伤害50.0%；持续4秒",
+    "enhanced_description": "伤害倍率350.0%；每秒持续伤害50.0%；持续4秒"
+  },
+  {
+    "id": "art_11",
+    "name": "穿云刺",
+    "category": "art",
+    "effects": {
+      "damage": 4.5,
+      "targets": 1,
+      "cooldown": 10,
+      "cost": 0.1,
+      "sword": false,
+      "pierce": 0.4
+    },
+    "enhanced": {
+      "damage": 4.5,
+      "targets": 1,
+      "cooldown": 10,
+      "cost": 0.1,
+      "sword": false,
+      "pierce": 0.4
+    },
+    "description": "伤害倍率450.0%；忽略防御40.0%",
+    "enhanced_description": "伤害倍率450.0%；忽略防御40.0%"
+  },
+  {
+    "id": "art_12",
+    "name": "震魂刺",
+    "category": "art",
+    "effects": {
+      "damage": 3,
+      "targets": 1,
+      "cooldown": 12,
+      "cost": 0.1,
+      "sword": false,
+      "stun": 1,
+      "spirit": 0.02
+    },
+    "enhanced": {
+      "damage": 3,
+      "targets": 1,
+      "cooldown": 12,
+      "cost": 0.1,
+      "sword": false,
+      "stun": 1,
+      "spirit": 0.02
+    },
+    "description": "伤害倍率300%；眩晕1秒；消耗神识上限2%",
+    "enhanced_description": "伤害倍率300%；眩晕1秒；消耗神识上限2%"
+  },
+  {
+    "id": "art_13",
+    "name": "缠藤困阵",
+    "category": "art",
+    "effects": {
+      "damage": 1.8,
+      "targets": 5,
+      "cooldown": 14,
+      "cost": 0.12,
+      "sword": false,
+      "weaken": 0.2,
+      "duration": 4
+    },
+    "enhanced": {
+      "damage": 1.8,
+      "targets": 5,
+      "cooldown": 14,
+      "cost": 0.12,
+      "sword": false,
+      "weaken": 0.2,
+      "duration": 4
+    },
+    "description": "伤害倍率180.0%；敌方伤害降低20.0%；持续4秒",
+    "enhanced_description": "伤害倍率180.0%；敌方伤害降低20.0%；持续4秒"
+  },
+  {
+    "id": "art_14",
+    "name": "碎盾诀",
+    "category": "art",
+    "effects": {
+      "damage": 3.5,
+      "targets": 1,
+      "cooldown": 10,
+      "cost": 0.1,
+      "sword": false,
+      "pierce": 0.5
+    },
+    "enhanced": {
+      "damage": 3.5,
+      "targets": 1,
+      "cooldown": 10,
+      "cost": 0.1,
+      "sword": false,
+      "pierce": 0.5
+    },
+    "description": "伤害倍率350.0%；忽略防御50.0%",
+    "enhanced_description": "伤害倍率350.0%；忽略防御50.0%"
+  },
+  {
+    "id": "art_15",
+    "name": "风雷双击",
+    "category": "art",
+    "effects": {
+      "damage": 5,
+      "targets": 1,
+      "cooldown": 10,
+      "cost": 0.11,
+      "sword": false,
+      "pierce": 0.3
+    },
+    "enhanced": {
+      "damage": 5,
+      "targets": 1,
+      "cooldown": 10,
+      "cost": 0.11,
+      "sword": false,
+      "pierce": 0.3
+    },
+    "description": "伤害倍率500%；忽略防御30.0%",
+    "enhanced_description": "伤害倍率500%；忽略防御30.0%"
+  },
+  {
+    "id": "art_16",
+    "name": "金钟护体",
+    "category": "art",
+    "effects": {
+      "damage": 1.5,
+      "targets": 5,
+      "cooldown": 16,
+      "cost": 0.12,
+      "sword": false,
+      "shield": 0.35,
+      "duration": 6
+    },
+    "enhanced": {
+      "damage": 1.5,
+      "targets": 5,
+      "cooldown": 16,
+      "cost": 0.12,
+      "sword": false,
+      "shield": 0.35,
+      "duration": 6
+    },
+    "description": "伤害倍率150.0%；生命护盾35.0%；持续6秒",
+    "enhanced_description": "伤害倍率150.0%；生命护盾35.0%；持续6秒"
+  },
+  {
+    "id": "art_17",
+    "name": "守山剑式",
+    "category": "art",
+    "effects": {
+      "damage": 2.2,
+      "targets": 5,
+      "cooldown": 12,
+      "cost": 0.12,
+      "sword": true,
+      "reduction": 0.25,
+      "duration": 4
+    },
+    "enhanced": {
+      "damage": 2.2,
+      "targets": 5,
+      "cooldown": 12,
+      "cost": 0.12,
+      "sword": true,
+      "reduction": 0.25,
+      "duration": 4
+    },
+    "description": "伤害倍率220.0%；减伤25.0%；持续4秒；需要佩剑",
+    "enhanced_description": "伤害倍率220.0%；减伤25.0%；持续4秒；需要佩剑"
+  },
+  {
+    "id": "art_18",
+    "name": "回春诀",
+    "category": "art",
+    "effects": {
+      "damage": 0,
+      "targets": 1,
+      "cooldown": 20,
+      "cost": 0.12,
+      "sword": false,
+      "heal": 0.2,
+      "shield": 0.1,
+      "threshold": 0.6
+    },
+    "enhanced": {
+      "damage": 0,
+      "targets": 1,
+      "cooldown": 20,
+      "cost": 0.12,
+      "sword": false,
+      "heal": 0.2,
+      "shield": 0.1,
+      "threshold": 0.6
+    },
+    "description": "生命护盾10.0%；恢复生命20.0%；生命低于60%触发",
+    "enhanced_description": "生命护盾10.0%；恢复生命20.0%；生命低于60%触发"
+  },
+  {
+    "id": "art_19",
+    "name": "净身诀",
+    "category": "art",
+    "effects": {
+      "damage": 2,
+      "targets": 1,
+      "cooldown": 18,
+      "cost": 0.1,
+      "sword": false,
+      "heal": 0.12,
+      "cleanse": true
+    },
+    "enhanced": {
+      "damage": 2,
+      "targets": 1,
+      "cooldown": 18,
+      "cost": 0.1,
+      "sword": false,
+      "heal": 0.12,
+      "cleanse": true
+    },
+    "description": "伤害倍率200%；恢复生命12.0%",
+    "enhanced_description": "伤害倍率200%；恢复生命12.0%"
+  },
+  {
+    "id": "art_20",
+    "name": "灵息回流",
+    "category": "art",
+    "effects": {
+      "damage": 1.6,
+      "targets": 1,
+      "cooldown": 20,
+      "cost": 0,
+      "sword": false,
+      "mana_restore": 0.18
+    },
+    "enhanced": {
+      "damage": 1.6,
+      "targets": 1,
+      "cooldown": 20,
+      "cost": 0,
+      "sword": false,
+      "mana_restore": 0.18
+    },
+    "description": "伤害倍率160.0%；回复灵力18.0%",
+    "enhanced_description": "伤害倍率160.0%；回复灵力18.0%"
+  },
+  {
+    "id": "art_21",
+    "name": "摄灵掌",
+    "category": "art",
+    "effects": {
+      "damage": 3,
+      "targets": 1,
+      "cooldown": 12,
+      "cost": 0.04,
+      "sword": false,
+      "mana_restore": 0.08
+    },
+    "enhanced": {
+      "damage": 3,
+      "targets": 1,
+      "cooldown": 12,
+      "cost": 0.04,
+      "sword": false,
+      "mana_restore": 0.08
+    },
+    "description": "伤害倍率300%；回复灵力8.0%",
+    "enhanced_description": "伤害倍率300%；回复灵力8.0%"
+  },
+  {
+    "id": "art_22",
+    "name": "血战连斩",
+    "category": "art",
+    "effects": {
+      "damage": 6,
+      "targets": 1,
+      "cooldown": 12,
+      "cost": 0.08,
+      "sword": false,
+      "self_cost": 0.05,
+      "min_health": 0.3
+    },
+    "enhanced": {
+      "damage": 6,
+      "targets": 1,
+      "cooldown": 12,
+      "cost": 0.08,
+      "sword": false,
+      "self_cost": 0.05,
+      "min_health": 0.3
+    },
+    "description": "伤害倍率600%",
+    "enhanced_description": "伤害倍率600%"
+  },
+  {
+    "id": "art_23",
+    "name": "镜光反击",
+    "category": "art",
+    "effects": {
+      "damage": 4,
+      "targets": 1,
+      "cooldown": 16,
+      "cost": 0.12,
+      "sword": false,
+      "reduction": 0.6,
+      "duration": 1
+    },
+    "enhanced": {
+      "damage": 4,
+      "targets": 1,
+      "cooldown": 16,
+      "cost": 0.12,
+      "sword": false,
+      "reduction": 0.6,
+      "duration": 1
+    },
+    "description": "伤害倍率400%；减伤60.0%；持续1秒",
+    "enhanced_description": "伤害倍率400%；减伤60.0%；持续1秒"
+  },
+  {
+    "id": "art_24",
+    "name": "星火燎原",
+    "category": "art",
+    "effects": {
+      "damage": 2,
+      "targets": 5,
+      "cooldown": 12,
+      "cost": 0.12,
+      "sword": false,
+      "burn": 0.375,
+      "duration": 4
+    },
+    "enhanced": {
+      "damage": 2,
+      "targets": 5,
+      "cooldown": 12,
+      "cost": 0.12,
+      "sword": false,
+      "burn": 0.375,
+      "duration": 4
+    },
+    "description": "伤害倍率200%；每秒持续伤害37.5%；持续4秒",
+    "enhanced_description": "伤害倍率200%；每秒持续伤害37.5%；持续4秒"
+  },
+  {
+    "id": "art_25",
+    "name": "归元剑诀",
+    "category": "art",
+    "effects": {
+      "damage": 3.5,
+      "targets": 1,
+      "cooldown": 15,
+      "cost": 0.12,
+      "sword": true,
+      "heal": 0.12
+    },
+    "enhanced": {
+      "damage": 3.5,
+      "targets": 1,
+      "cooldown": 15,
+      "cost": 0.12,
+      "sword": true,
+      "heal": 0.12
+    },
+    "description": "伤害倍率350.0%；恢复生命12.0%；需要佩剑",
+    "enhanced_description": "伤害倍率350.0%；恢复生命12.0%；需要佩剑"
+  },
+  {
+    "id": "ability_01",
+    "name": "破天剑",
+    "category": "ability",
+    "effects": {
+      "damage": 10,
+      "targets": 1,
+      "cooldown": 40,
+      "cost": 0.2,
+      "shield": 0.25,
+      "pierce": 0.6
+    },
+    "enhanced": {
+      "damage": 18,
+      "targets": 1,
+      "cooldown": 25,
+      "cost": 0.2,
+      "shield": 0.45,
+      "pierce": 0.8
+    },
+    "description": "伤害倍率1000%；生命护盾25.0%；忽略防御60.0%",
+    "enhanced_description": "伤害倍率1800%；生命护盾45.0%；忽略防御80.0%"
+  },
+  {
+    "id": "ability_02",
+    "name": "不灭金身",
+    "category": "ability",
+    "effects": {
+      "damage": 6,
+      "targets": 1,
+      "cooldown": 45,
+      "cost": 0.2,
+      "threshold": 0.6,
+      "reduction": 0.7,
+      "duration": 6
+    },
+    "enhanced": {
+      "damage": 12,
+      "targets": 1,
+      "cooldown": 35,
+      "cost": 0.2,
+      "threshold": 0.6,
+      "reduction": 0.85,
+      "duration": 8,
+      "heal": 0.3,
+      "immunity": 8
+    },
+    "description": "伤害倍率600%；减伤70.0%；生命低于60%触发；持续6秒",
+    "enhanced_description": "伤害倍率1200%；恢复生命30.0%；减伤85.0%；生命低于60%触发；持续8秒"
+  },
+  {
+    "id": "ability_03",
+    "name": "万剑归宗",
+    "category": "ability",
+    "effects": {
+      "damage": 12,
+      "targets": 1,
+      "cooldown": 40,
+      "cost": 0.2,
+      "pierce": 0.3,
+      "reduction": 0.3,
+      "duration": 3
+    },
+    "enhanced": {
+      "damage": 21.6,
+      "targets": 1,
+      "cooldown": 30,
+      "cost": 0.2,
+      "pierce": 0.6,
+      "reduction": 0.6,
+      "duration": 3
+    },
+    "description": "伤害倍率1200%；忽略防御30.0%；减伤30.0%；持续3秒",
+    "enhanced_description": "伤害倍率2160.0%；忽略防御60.0%；减伤60.0%；持续3秒"
+  },
+  {
+    "id": "ability_04",
+    "name": "天雷诛邪",
+    "category": "ability",
+    "effects": {
+      "damage": 12,
+      "targets": 1,
+      "cooldown": 40,
+      "cost": 0.2,
+      "stun": 1,
+      "shield": 0.2
+    },
+    "enhanced": {
+      "damage": 20,
+      "targets": 1,
+      "cooldown": 30,
+      "cost": 0.2,
+      "stun": 2,
+      "shield": 0.4
+    },
+    "description": "伤害倍率1200%；生命护盾20.0%；眩晕1秒",
+    "enhanced_description": "伤害倍率2000%；生命护盾40.0%；眩晕2秒"
+  },
+  {
+    "id": "ability_05",
+    "name": "山河镇魔",
+    "category": "ability",
+    "effects": {
+      "damage": 7,
+      "targets": 5,
+      "cooldown": 40,
+      "cost": 0.2,
+      "weaken": 0.25,
+      "duration": 5
+    },
+    "enhanced": {
+      "damage": 12,
+      "targets": 5,
+      "cooldown": 30,
+      "cost": 0.2,
+      "weaken": 0.4,
+      "duration": 7
+    },
+    "description": "伤害倍率700%；敌方伤害降低25.0%；持续5秒",
+    "enhanced_description": "伤害倍率1200%；敌方伤害降低40.0%；持续7秒"
+  },
+  {
+    "id": "ability_06",
+    "name": "凤凰涅槃",
+    "category": "ability",
+    "effects": {
+      "damage": 8,
+      "targets": 1,
+      "cooldown": 9999,
+      "cost": 0,
+      "lethal": true,
+      "heal": 0.35
+    },
+    "enhanced": {
+      "damage": 16,
+      "targets": 1,
+      "cooldown": 9999,
+      "cost": 0,
+      "lethal": true,
+      "heal": 0.7,
+      "reduction": 1,
+      "duration": 2
+    },
+    "description": "伤害倍率800%；恢复生命35.0%；致命受击触发，每场仅一次；同类保命不叠加",
+    "enhanced_description": "伤害倍率1600%；恢复生命70.0%；减伤100%；持续2秒；致命受击触发，每场仅一次；同类保命不叠加"
+  },
+  {
+    "id": "ability_07",
+    "name": "太虚护命",
+    "category": "ability",
+    "effects": {
+      "damage": 10,
+      "targets": 1,
+      "cooldown": 9999,
+      "cost": 0,
+      "lethal": true,
+      "shield": 0.3
+    },
+    "enhanced": {
+      "damage": 20,
+      "targets": 1,
+      "cooldown": 9999,
+      "cost": 0,
+      "lethal": true,
+      "shield": 0.6,
+      "mana_restore": 0.2
+    },
+    "description": "伤害倍率1000%；生命护盾30.0%；致命受击触发，每场仅一次；同类保命不叠加",
+    "enhanced_description": "伤害倍率2000%；生命护盾60.0%；回复灵力20.0%；致命受击触发，每场仅一次；同类保命不叠加"
+  },
+  {
+    "id": "ability_08",
+    "name": "噬灵归元",
+    "category": "ability",
+    "effects": {
+      "damage": 9,
+      "targets": 1,
+      "cooldown": 40,
+      "cost": 0.2,
+      "heal": 0.25,
+      "mana_restore": 0.15
+    },
+    "enhanced": {
+      "damage": 16,
+      "targets": 1,
+      "cooldown": 30,
+      "cost": 0.2,
+      "heal": 0.4,
+      "mana_restore": 0.25
+    },
+    "description": "伤害倍率900%；恢复生命25.0%；回复灵力15.0%",
+    "enhanced_description": "伤害倍率1600%；恢复生命40.0%；回复灵力25.0%"
+  },
+  {
+    "id": "ability_09",
+    "name": "冰魄封天",
+    "category": "ability",
+    "effects": {
+      "damage": 9,
+      "targets": 1,
+      "cooldown": 40,
+      "cost": 0.2,
+      "stun": 1,
+      "shield": 0.3
+    },
+    "enhanced": {
+      "damage": 15,
+      "targets": 1,
+      "cooldown": 30,
+      "cost": 0.2,
+      "stun": 2,
+      "shield": 0.5,
+      "weaken": 0.3,
+      "duration": 4
+    },
+    "description": "伤害倍率900%；生命护盾30.0%；眩晕1秒",
+    "enhanced_description": "伤害倍率1500%；生命护盾50.0%；敌方伤害降低30.0%；持续4秒；眩晕2秒"
+  },
+  {
+    "id": "ability_10",
+    "name": "幽冥断魂",
+    "category": "ability",
+    "effects": {
+      "damage": 11,
+      "targets": 1,
+      "cooldown": 40,
+      "cost": 0.2,
+      "spirit": 0.02,
+      "weaken": 0.3,
+      "duration": 6
+    },
+    "enhanced": {
+      "damage": 18,
+      "targets": 1,
+      "cooldown": 30,
+      "cost": 0.2,
+      "spirit": 0.02,
+      "weaken": 0.5,
+      "duration": 6,
+      "immunity": 4
+    },
+    "description": "伤害倍率1100%；敌方伤害降低30.0%；持续6秒；消耗神识上限2%",
+    "enhanced_description": "伤害倍率1800%；敌方伤害降低50.0%；持续6秒；消耗神识上限2%"
+  },
+  {
+    "id": "ability_11",
+    "name": "剑意领域",
+    "category": "ability",
+    "effects": {
+      "damage": 0,
+      "targets": 1,
+      "cooldown": 40,
+      "cost": 0.2,
+      "boost": 0.35,
+      "pierce": 0.2,
+      "shield": 0.25,
+      "duration": 10
+    },
+    "enhanced": {
+      "damage": 0,
+      "targets": 1,
+      "cooldown": 30,
+      "cost": 0.2,
+      "boost": 0.65,
+      "pierce": 0.4,
+      "shield": 0.45,
+      "duration": 15
+    },
+    "description": "生命护盾25.0%；忽略防御20.0%；增伤35.0%；持续10秒",
+    "enhanced_description": "生命护盾45.0%；忽略防御40.0%；增伤65.0%；持续15秒"
+  },
+  {
+    "id": "ability_12",
+    "name": "五行轮转",
+    "category": "ability",
+    "effects": {
+      "damage": 11,
+      "targets": 1,
+      "cooldown": 40,
+      "cost": 0.2,
+      "pierce": 0.2,
+      "burn": 0.4,
+      "duration": 4,
+      "mana_restore": 0.1,
+      "shield": 0.2
+    },
+    "enhanced": {
+      "damage": 20,
+      "targets": 1,
+      "cooldown": 30,
+      "cost": 0.2,
+      "pierce": 0.4,
+      "burn": 0.8,
+      "duration": 4,
+      "mana_restore": 0.2,
+      "shield": 0.35,
+      "heal": 0.2
+    },
+    "description": "伤害倍率1100%；生命护盾20.0%；忽略防御20.0%；回复灵力10.0%；每秒持续伤害40.0%；持续4秒",
+    "enhanced_description": "伤害倍率2000%；生命护盾35.0%；恢复生命20.0%；忽略防御40.0%；回复灵力20.0%；每秒持续伤害80.0%；持续4秒"
+  },
+  {
+    "id": "ability_13",
+    "name": "阴阳逆转",
+    "category": "ability",
+    "effects": {
+      "damage": 10,
+      "targets": 1,
+      "cooldown": 40,
+      "cost": 0.2,
+      "threshold": 0.4,
+      "heal": 0.3
+    },
+    "enhanced": {
+      "damage": 18,
+      "targets": 1,
+      "cooldown": 30,
+      "cost": 0.2,
+      "threshold": 0.4,
+      "heal": 0.55,
+      "reduction": 0.5,
+      "duration": 4
+    },
+    "description": "伤害倍率1000%；恢复生命30.0%；生命低于40%触发",
+    "enhanced_description": "伤害倍率1800%；恢复生命55.0%；减伤50.0%；生命低于40%触发；持续4秒"
+  },
+  {
+    "id": "ability_14",
+    "name": "星辰坠落",
+    "category": "ability",
+    "effects": {
+      "damage": 8,
+      "targets": 5,
+      "cooldown": 40,
+      "cost": 0.2,
+      "shield": 0.3
+    },
+    "enhanced": {
+      "damage": 14,
+      "targets": 5,
+      "cooldown": 30,
+      "cost": 0.2,
+      "shield": 0.5,
+      "pierce": 0.5
+    },
+    "description": "伤害倍率800%；生命护盾30.0%",
+    "enhanced_description": "伤害倍率1400%；生命护盾50.0%；忽略防御50.0%"
+  },
+  {
+    "id": "ability_15",
+    "name": "万象灵镜",
+    "category": "ability",
+    "effects": {
+      "damage": 12,
+      "targets": 1,
+      "cooldown": 40,
+      "cost": 0.2,
+      "reduction": 0.8,
+      "duration": 1
+    },
+    "enhanced": {
+      "damage": 28,
+      "targets": 1,
+      "cooldown": 30,
+      "cost": 0.2,
+      "reduction": 1,
+      "duration": 2
+    },
+    "description": "伤害倍率1200%；减伤80.0%；持续1秒",
+    "enhanced_description": "伤害倍率2800%；减伤100%；持续2秒"
+  },
+  {
+    "id": "ability_16",
+    "name": "法相镇身",
+    "category": "ability",
+    "effects": {
+      "damage": 6.4,
+      "targets": 1,
+      "cooldown": 40,
+      "cost": 0.2,
+      "shield": 0.4,
+      "boost": 0.3,
+      "duration": 8
+    },
+    "enhanced": {
+      "damage": 12,
+      "targets": 1,
+      "cooldown": 30,
+      "cost": 0.2,
+      "shield": 0.7,
+      "boost": 0.5,
+      "duration": 8
+    },
+    "description": "伤害倍率640.0%；生命护盾40.0%；增伤30.0%；持续8秒",
+    "enhanced_description": "伤害倍率1200%；生命护盾70.0%；增伤50.0%；持续8秒"
+  },
+  {
+    "id": "ability_17",
+    "name": "血海战魂",
+    "category": "ability",
+    "effects": {
+      "damage": 0,
+      "targets": 1,
+      "cooldown": 40,
+      "cost": 0.2,
+      "boost": 0.5,
+      "lifesteal": 0.15,
+      "duration": 8,
+      "self_cost": 0.1
+    },
+    "enhanced": {
+      "damage": 0,
+      "targets": 1,
+      "cooldown": 30,
+      "cost": 0.2,
+      "boost": 0.8,
+      "lifesteal": 0.25,
+      "duration": 8,
+      "shield": 0.35
+    },
+    "description": "增伤50.0%；吸血15.0%；持续8秒",
+    "enhanced_description": "生命护盾35.0%；增伤80.0%；吸血25.0%；持续8秒"
+  },
+  {
+    "id": "ability_18",
+    "name": "青莲净世",
+    "category": "ability",
+    "effects": {
+      "damage": 6,
+      "targets": 5,
+      "cooldown": 40,
+      "cost": 0.2,
+      "heal": 0.25,
+      "cleanse": true
+    },
+    "enhanced": {
+      "damage": 11,
+      "targets": 5,
+      "cooldown": 30,
+      "cost": 0.2,
+      "heal": 0.45,
+      "cleanse": true,
+      "immunity": 6
+    },
+    "description": "伤害倍率600%；恢复生命25.0%",
+    "enhanced_description": "伤害倍率1100%；恢复生命45.0%"
+  },
+  {
+    "id": "ability_19",
+    "name": "风雷神行",
+    "category": "ability",
+    "effects": {
+      "damage": 9,
+      "targets": 1,
+      "cooldown": 40,
+      "cost": 0.2,
+      "reduction": 1,
+      "duration": 1
+    },
+    "enhanced": {
+      "damage": 22.5,
+      "targets": 1,
+      "cooldown": 30,
+      "cost": 0.2,
+      "reduction": 1,
+      "duration": 2
+    },
+    "description": "伤害倍率900%；减伤100%；持续1秒",
+    "enhanced_description": "伤害倍率2250.0%；减伤100%；持续2秒"
+  },
+  {
+    "id": "ability_20",
+    "name": "混元一气",
+    "category": "ability",
+    "effects": {
+      "damage": 13,
+      "targets": 1,
+      "cooldown": 40,
+      "cost": 0.2,
+      "mana_restore": 0.2,
+      "reduction": 0.3,
+      "duration": 5
+    },
+    "enhanced": {
+      "damage": 22,
+      "targets": 1,
+      "cooldown": 30,
+      "cost": 0.2,
+      "mana_restore": 0.35,
+      "reduction": 0.6,
+      "duration": 5
+    },
+    "description": "伤害倍率1300%；减伤30.0%；回复灵力20.0%；持续5秒",
+    "enhanced_description": "伤害倍率2200%；减伤60.0%；回复灵力35.0%；持续5秒"
+  },
+  {
+    "id": "ability_21",
+    "name": "镇魂天钟",
+    "category": "ability",
+    "effects": {
+      "damage": 6.5,
+      "targets": 5,
+      "cooldown": 40,
+      "cost": 0.2,
+      "stun": 1,
+      "shield": 0.3,
+      "spirit": 0.02
+    },
+    "enhanced": {
+      "damage": 11,
+      "targets": 5,
+      "cooldown": 30,
+      "cost": 0.2,
+      "stun": 2,
+      "shield": 0.55,
+      "spirit": 0.02
+    },
+    "description": "伤害倍率650.0%；生命护盾30.0%；眩晕1秒；消耗神识上限2%",
+    "enhanced_description": "伤害倍率1100%；生命护盾55.0%；眩晕2秒；消耗神识上限2%"
+  },
+  {
+    "id": "ability_22",
+    "name": "乾坤挪移",
+    "category": "ability",
+    "effects": {
+      "damage": 10,
+      "targets": 1,
+      "cooldown": 40,
+      "cost": 0.2,
+      "reduction": 0.7,
+      "duration": 1
+    },
+    "enhanced": {
+      "damage": 18,
+      "targets": 1,
+      "cooldown": 30,
+      "cost": 0.2,
+      "reduction": 0.9,
+      "duration": 1,
+      "heal": 0.25
+    },
+    "description": "伤害倍率1000%；减伤70.0%；持续1秒",
+    "enhanced_description": "伤害倍率1800%；恢复生命25.0%；减伤90.0%；持续1秒"
+  },
+  {
+    "id": "ability_23",
+    "name": "太初剑心",
+    "category": "ability",
+    "effects": {
+      "damage": 6,
+      "targets": 1,
+      "cooldown": 4,
+      "cost": 0,
+      "shield": 0.3
+    },
+    "enhanced": {
+      "damage": 10,
+      "targets": 1,
+      "cooldown": 3,
+      "cost": 0,
+      "shield": 0.5
+    },
+    "description": "伤害倍率600%；生命护盾30.0%",
+    "enhanced_description": "伤害倍率1000%；生命护盾50.0%"
+  },
+  {
+    "id": "ability_24",
+    "name": "苍龙守道",
+    "category": "ability",
+    "effects": {
+      "damage": 10,
+      "targets": 1,
+      "cooldown": 40,
+      "cost": 0.2,
+      "reduction": 0.3,
+      "duration": 10
+    },
+    "enhanced": {
+      "damage": 24,
+      "targets": 1,
+      "cooldown": 30,
+      "cost": 0.2,
+      "reduction": 0.55,
+      "duration": 12
+    },
+    "description": "伤害倍率1000%；减伤30.0%；持续10秒",
+    "enhanced_description": "伤害倍率2400%；减伤55.0%；持续12秒"
+  },
+  {
+    "id": "ability_25",
+    "name": "轮回印",
+    "category": "ability",
+    "effects": {
+      "damage": 12,
+      "targets": 1,
+      "cooldown": 40,
+      "cost": 0.2,
+      "shield": 0.25,
+      "delay": 8
+    },
+    "enhanced": {
+      "damage": 22,
+      "targets": 1,
+      "cooldown": 30,
+      "cost": 0.2,
+      "shield": 0.45,
+      "delay": 8,
+      "heal": 0.2
+    },
+    "description": "伤害倍率1200%；生命护盾25.0%；延迟8秒爆发",
+    "enhanced_description": "伤害倍率2200%；生命护盾45.0%；恢复生命20.0%；延迟8秒爆发"
+  }
+]
